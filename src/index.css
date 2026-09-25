@@ -137,6 +137,30 @@
   animation: floatSlow1 5s ease-in-out infinite 0.5s;
 }
 
-.animate-float-4 {
-  animation: floatSlow2 4.8s ease-in-out infinite 1s;
+@keyframes headerGoldLight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.animate-header-gold-light {
+  animation: headerGoldLight 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-header-gold-light {
+    animation: none !important;
+    display: none !important;
+  }
+  .animate-gold-beam,
+  .animate-gold-glow,
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3,
+  .animate-float-4 {
+    animation: none !important;
+  }
 }

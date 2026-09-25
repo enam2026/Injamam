@@ -47,10 +47,8 @@ export const Navbar = ({ activeSection }: NavbarProps) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-[#faf8f4]/95 backdrop-blur-md shadow-sm border-b border-[#e5dfd3] py-3.5"
-          : "bg-transparent py-5"
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#145A46] text-white transition-all duration-300 shadow-md ${
+        isScrolled ? "py-3 sm:py-3.5" : "py-4 sm:py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,16 +56,16 @@ export const Navbar = ({ activeSection }: NavbarProps) => {
           {/* Zone 1: Single text element wordmark as per Top Bar Contract */}
           <button
             onClick={() => scrollTo("hero")}
-            className="text-left group cursor-pointer focus:outline-none relative py-1 px-1.5 sm:px-2.5 rounded-xl hover:bg-[#efe9dc]/70 transition-all duration-300"
+            className="text-left group cursor-pointer focus:outline-none relative py-1 px-1.5 sm:px-2.5 rounded-xl hover:bg-white/10 transition-all duration-300"
             aria-label="Mufti Inzamamul Islam"
           >
             <div className="flex items-center gap-2 sm:gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#c5a059] group-hover:scale-125 transition-transform shadow-[0_0_8px_rgba(197,160,89,0.7)]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#D9B76E] group-hover:scale-125 transition-transform shadow-[0_0_8px_rgba(217,183,110,0.8)]" />
               <div>
-                <span className="text-base sm:text-xl font-bold tracking-tight text-[#0f3d2e] group-hover:text-[#185d46] transition-colors relative block leading-tight font-heading">
+                <span className="text-base sm:text-xl font-bold tracking-tight text-[#faf8f4] group-hover:text-[#D9B76E] transition-colors relative block leading-tight font-heading">
                   মুফতী ইনজামামুল ইসলাম
                 </span>
-                <span className="text-[10px] font-cinzel text-[#8c7447] tracking-widest uppercase hidden xs:block">
+                <span className="text-[10px] font-cinzel text-[#D9B76E] tracking-widest uppercase hidden xs:block font-medium">
                   Islamic Scholar & Educator
                 </span>
               </div>
@@ -75,20 +73,20 @@ export const Navbar = ({ activeSection }: NavbarProps) => {
           </button>
 
           {/* Zone 2: Clean text navigation links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#3e4f45]">
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-white/85">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
-                  className={`relative py-1.5 transition-colors hover:text-[#0f3d2e] cursor-pointer whitespace-nowrap ${
-                    isActive ? "text-[#0f3d2e] font-bold" : "text-[#4d5d53]"
+                  className={`relative py-1.5 transition-colors hover:text-[#D9B76E] cursor-pointer whitespace-nowrap ${
+                    isActive ? "text-[#D9B76E] font-bold" : "text-white/85"
                   }`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-gradient-to-r from-[#c5a059] to-[#0f3d2e] rounded-full" />
+                    <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#D9B76E] rounded-full shadow-[0_0_6px_rgba(217,183,110,0.7)]" />
                   )}
                 </button>
               );
@@ -111,28 +109,38 @@ export const Navbar = ({ activeSection }: NavbarProps) => {
 
             <button
               onClick={() => scrollTo("courses")}
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#0f3d2e] hover:bg-[#15543f] active:scale-95 rounded-xl transition-all shadow-sm border border-[#c5a059]/40 cursor-pointer whitespace-nowrap"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-[#145A46] bg-[#D9B76E] hover:bg-[#e4c683] active:scale-95 rounded-xl transition-all shadow-sm border border-[#D9B76E]/60 cursor-pointer whitespace-nowrap font-medium"
             >
-              <span>কোর্সসমূহ</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#dfc285]" />
+              <span className="text-[#0a3126] font-bold">কোর্সসমূহ</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-[#0a3126]" />
             </button>
 
             {/* Mobile Hamburger Toggle with refined touch target */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-xl text-[#0f3d2e] bg-[#f2eee3] hover:bg-[#eae3d5] active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-[#0f3d2e]/20"
+              className="lg:hidden p-2.5 rounded-xl text-white bg-white/10 hover:bg-white/15 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-[#D9B76E]/50"
               aria-label={mobileMenuOpen ? "মেনু বন্ধ করুন" : "মেনু খুলুন"}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#D9B76E]" /> : <Menu className="w-5 h-5 text-white" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu with polished layout */}
+      {/* Thin line along bottom edge of header with moving continuous golden light */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#1a6e56] overflow-hidden pointer-events-none">
+        {/* Continuous looping golden light beam */}
+        <div
+          className="absolute top-0 bottom-0 w-36 sm:w-56 bg-gradient-to-r from-transparent via-[#D9B76E] to-transparent animate-header-gold-light opacity-95 shadow-[0_0_10px_#D9B76E]"
+        />
+        {/* Subtle static ambient golden line baseline */}
+        <div className="w-full h-full bg-gradient-to-r from-transparent via-[#D9B76E]/40 to-transparent" />
+      </div>
+
+      {/* Mobile Drawer Menu with deep green theme matching header */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#faf8f4]/98 backdrop-blur-md border-b border-[#e5dfd3] shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden bg-[#0e4434] border-b border-[#D9B76E]/30 shadow-2xl animate-in slide-in-from-top-2 duration-200">
           <div className="max-w-7xl mx-auto px-4 pt-3 pb-5 space-y-1">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
@@ -142,19 +150,19 @@ export const Navbar = ({ activeSection }: NavbarProps) => {
                   onClick={() => scrollTo(item.id)}
                   className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold text-left transition-all ${
                     isActive
-                      ? "bg-[#0f3d2e] text-white shadow-sm"
-                      : "text-[#2e3e34] hover:bg-[#eeeae0] active:bg-[#e4ded0]"
+                      ? "bg-[#145A46] text-[#D9B76E] shadow-sm border border-[#D9B76E]/30"
+                      : "text-white/90 hover:bg-white/10 active:bg-white/15"
                   }`}
                 >
                   <span className="font-heading text-base">{item.label}</span>
-                  <span className={`text-[11px] font-cinzel tracking-wider ${isActive ? "text-[#dfc285]" : "text-[#7a8a81]"}`}>
+                  <span className={`text-[11px] font-cinzel tracking-wider ${isActive ? "text-[#D9B76E]" : "text-white/60"}`}>
                     {item.labelEn}
                   </span>
                 </button>
               );
             })}
 
-            <div className="pt-3.5 mt-2 border-t border-[#e8e2d4] grid grid-cols-2 gap-2">
+            <div className="pt-3.5 mt-2 border-t border-white/15 grid grid-cols-2 gap-2">
               <a
                 href="https://wa.me/8801923595009"
                 target="_blank"
@@ -167,10 +175,10 @@ export const Navbar = ({ activeSection }: NavbarProps) => {
 
               <button
                 onClick={() => scrollTo("courses")}
-                className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold text-white bg-[#0f3d2e] hover:bg-[#144f3b] active:scale-95 transition-all shadow-sm border border-[#c5a059]/40"
+                className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold text-[#0a3126] bg-[#D9B76E] hover:bg-[#e4c683] active:scale-95 transition-all shadow-sm"
               >
                 <span>কোর্সসমূহ</span>
-                <ArrowUpRight className="w-4 h-4 text-[#dfc285]" />
+                <ArrowUpRight className="w-4 h-4 text-[#0a3126]" />
               </button>
             </div>
           </div>
