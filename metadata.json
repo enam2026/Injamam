@@ -1,0 +1,6 @@
+{
+  "name": "Mufti Inzamamul Islam Portfolio",
+  "description": "মুফতী ইনজামামুল ইসলাম - ইসলামিক স্কলার, শিক্ষক, মেন্টর ও উদ্যোক্তা এর অফিসিয়াল পার্সোনাল পোর্টফোলিও ওয়েবসাইট।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
