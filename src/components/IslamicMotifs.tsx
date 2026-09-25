@@ -62,6 +62,53 @@ export const IslamicGeometricRing = ({ className = "" }: { className?: string })
   </svg>
 );
 
+// Solid Islamic Arabesque / Geometric Pattern Divider for Name Section with Radiant Light Effect
+export const IslamicSolidPatternDivider = ({ className = "" }: { className?: string }) => (
+  <div className={`relative w-full flex items-center justify-center my-3 select-none ${className}`} aria-hidden="true">
+    {/* Ambient radial gold light glow behind the center badge */}
+    <div className="absolute left-1/2 -translate-x-1/2 w-48 h-8 bg-gradient-to-r from-transparent via-[#dfc285]/50 to-transparent blur-md pointer-events-none animate-pulse" />
+
+    {/* Left horizontal tapered line with light gradient */}
+    <div className="relative flex-1 max-w-[140px] sm:max-w-[200px] h-[1.5px] bg-gradient-to-r from-transparent via-[#c5a059] to-[#0f3d2e] rounded-full">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 animate-[nameShimmer_3s_infinite]" />
+    </div>
+
+    {/* Center Pill Badge matching user image exactly */}
+    <div className="relative mx-2 sm:mx-3 px-3 py-1 rounded-xl bg-[#faf6ee] border border-[#dfc285] shadow-[0_2px_12px_rgba(197,160,89,0.35)] flex items-center gap-2 group">
+      {/* Light shimmer sweep across badge */}
+      <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+        <div className="w-[200%] h-full absolute -left-[100%] bg-gradient-to-r from-transparent via-[#ffffff]/50 to-transparent skew-x-12 animate-[nameShimmer_4s_infinite]" />
+      </div>
+
+      {/* Left Diamond with center dot: outer rotated square + inner circle */}
+      <div className="relative w-3.5 h-3.5 flex items-center justify-center">
+        <div className="w-2.5 h-2.5 rotate-45 border-[1.5px] border-[#0f3d2e] bg-transparent" />
+        <span className="absolute w-1 h-1 rounded-full bg-[#dfc285]" />
+      </div>
+
+      {/* Left green circular dot */}
+      <span className="w-1.5 h-1.5 rounded-full bg-[#0f3d2e]" />
+
+      {/* Center solid gold diamond (larger) */}
+      <div className="w-2.5 h-2.5 rotate-45 bg-[#c5a059] shadow-xs" />
+
+      {/* Right green circular dot */}
+      <span className="w-1.5 h-1.5 rounded-full bg-[#0f3d2e]" />
+
+      {/* Right Diamond with center dot: outer rotated square + inner circle */}
+      <div className="relative w-3.5 h-3.5 flex items-center justify-center">
+        <div className="w-2.5 h-2.5 rotate-45 border-[1.5px] border-[#0f3d2e] bg-transparent" />
+        <span className="absolute w-1 h-1 rounded-full bg-[#dfc285]" />
+      </div>
+    </div>
+
+    {/* Right horizontal tapered line with light gradient */}
+    <div className="relative flex-1 max-w-[140px] sm:max-w-[200px] h-[1.5px] bg-gradient-to-r from-[#0f3d2e] via-[#c5a059] to-transparent rounded-full">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-transparent opacity-60 animate-[nameShimmer_3s_infinite_1.5s]" />
+    </div>
+  </div>
+);
+
 // High-Fidelity Dignified Scholar Portrait Placeholder
 interface ScholarPortraitProps {
   photoUrl?: string;

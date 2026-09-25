@@ -1,6 +1,6 @@
 import { ArrowRight, BookOpen, GraduationCap, Compass, Briefcase, Award, ShieldCheck, UserCheck } from "lucide-react";
 import { PORTFOLIO_DATA } from "../data/portfolioData";
-import { ScholarPortrait, IslamicGeometricRing, IslamicStarIcon } from "./IslamicMotifs";
+import { ScholarPortrait, IslamicGeometricRing, IslamicStarIcon, IslamicSolidPatternDivider } from "./IslamicMotifs";
 
 export const Hero = () => {
   const { scholar } = PORTFOLIO_DATA;
@@ -39,16 +39,16 @@ export const Hero = () => {
 
             {/* Main Heading & Animated Name Button */}
             <div className="space-y-3">
-              <div className="inline-block relative">
+              <div className="inline-block relative w-full sm:w-auto">
                 {/* Background animated aura around name button */}
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#c5a059]/40 via-[#dfc285]/60 to-[#0f3d2e]/40 blur-md opacity-70 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
                 <button
                   onClick={() => scrollTo("about")}
-                  className="relative group cursor-pointer text-left focus:outline-none block"
+                  className="relative group cursor-pointer text-left focus:outline-none w-full sm:w-auto block"
                   aria-label="মুফতী ইনজামামুল ইসলাম - পরিচিতি"
                 >
-                  <div className="relative flex items-center gap-3.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl bg-gradient-to-r from-[#0f3d2e] via-[#144e3b] to-[#0a291f] text-white border border-[#dfc285]/60 shadow-[0_4px_20px_rgba(15,61,46,0.2)] hover:shadow-[0_6px_28px_rgba(197,160,89,0.35)] transition-all duration-300 transform hover:-translate-y-0.5">
+                  <div className="relative flex items-center gap-3 sm:gap-3.5 px-3.5 py-2.5 sm:px-5 sm:py-2.5 rounded-2xl bg-gradient-to-r from-[#0f3d2e] via-[#144e3b] to-[#0a291f] text-white border border-[#dfc285]/60 shadow-[0_4px_20px_rgba(15,61,46,0.2)] hover:shadow-[0_6px_28px_rgba(197,160,89,0.35)] transition-all duration-300 transform hover:-translate-y-0.5">
                     {/* Animated Light Shimmer Ribbon across button */}
                     <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
                       <div className="w-[200%] h-full absolute -left-[100%] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 animate-[nameShimmer_3.5s_infinite]" />
@@ -58,46 +58,51 @@ export const Hero = () => {
                       <IslamicStarIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#dfc285]" />
                     </div>
 
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#faf8f4] group-hover:text-[#dfc285] tracking-tight leading-tight font-heading transition-colors">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-[#faf8f4] group-hover:text-[#dfc285] tracking-tight leading-tight font-heading transition-colors truncate">
                           {scholar.nameBn}
                         </span>
                         <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-[#c5a059]/20 text-[#dfc285] border border-[#dfc285]/40 animate-pulse">
-                          অফিসিয়াল প্রোফাইল
+                          অফিসিয়াল
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm font-cinzel text-[#dfc285]/90 tracking-widest uppercase font-medium mt-0.5">
+                      <p className="text-[11px] sm:text-sm font-cinzel text-[#dfc285]/90 tracking-widest uppercase font-medium mt-0.5">
                         {scholar.nameEn}
                       </p>
                     </div>
                   </div>
                 </button>
               </div>
+
+              {/* Solid Islamic Geometric Pattern Design beneath Name with radiant light effect */}
+              <div className="w-full max-w-xl">
+                <IslamicSolidPatternDivider className="my-2" />
+              </div>
             </div>
 
             {/* Supporting Text */}
-            <p className="text-base sm:text-lg text-[#3b4c42] leading-relaxed max-w-2xl">
+            <p className="text-sm sm:text-lg text-[#3b4c42] leading-relaxed max-w-2xl">
               {scholar.heroIntro}
             </p>
 
             {/* Core credentials summary */}
-            <div className="pt-2 pb-1 border-y border-[#e6dfd1] grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-xs sm:text-sm text-[#44564c]">
+            <div className="pt-2 pb-1 border-y border-[#e6dfd1] grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 max-w-xl text-xs sm:text-sm text-[#44564c]">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#0f3d2e] shrink-0" />
-                <span>শিক্ষা সচিব ও শাইখুল হাদিস — জামিয়া রহিমিয়া আরাবিয়া</span>
+                <span className="font-medium">শিক্ষা সচিব ও শাইখুল হাদিস — জামিয়া রহিমিয়া আরাবিয়া</span>
               </div>
               <div className="flex items-center gap-2">
                 <UserCheck className="w-4 h-4 text-[#c5a059] shrink-0" />
-                <span>মেন্টর — খিদমাহ ইনস্টিটিউট</span>
+                <span className="font-medium">মেন্টর — খিদমাহ ইনস্টিটিউট</span>
               </div>
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
               <button
                 onClick={() => scrollTo("about")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-[#0f3d2e] hover:bg-[#15543f] active:bg-[#0a2b20] transition-all duration-200 shadow-md hover:shadow-lg border border-[#c5a059]/30 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 rounded-xl text-sm font-semibold text-white bg-[#0f3d2e] hover:bg-[#15543f] active:scale-98 transition-all duration-200 shadow-md hover:shadow-lg border border-[#c5a059]/30 cursor-pointer text-center"
               >
                 <span>আমার সম্পর্কে জানুন</span>
                 <ArrowRight className="w-4 h-4 text-[#dfc285]" />
@@ -105,7 +110,7 @@ export const Hero = () => {
 
               <button
                 onClick={() => scrollTo("courses")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-[#0f3d2e] bg-[#f2eee3] hover:bg-[#eae3d5] active:bg-[#ded5c4] transition-all duration-200 border border-[#d8cfbd] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 rounded-xl text-sm font-semibold text-[#0f3d2e] bg-[#f2eee3] hover:bg-[#eae3d5] active:scale-98 transition-all duration-200 border border-[#d8cfbd] cursor-pointer text-center"
               >
                 <BookOpen className="w-4 h-4 text-[#c5a059]" />
                 <span>কোর্সসমূহ দেখুন</span>
@@ -113,8 +118,8 @@ export const Hero = () => {
             </div>
 
             {/* Quiet trust markers */}
-            <div className="pt-3 flex items-center gap-4 text-xs text-[#5f7166]">
-              <span>বিশেষায়িত ইফতা ও ফিকহ</span>
+            <div className="pt-2 sm:pt-3 flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-[#5f7166]">
+              <span>বিশেষায়িত ইফতা ও ফিকহ</span>
               <span aria-hidden="true" className="text-[#c5a059]">·</span>
               <span>উচ্চতর হাদিস শিক্ষা</span>
               <span aria-hidden="true" className="text-[#c5a059]">·</span>
@@ -194,33 +199,45 @@ export const Hero = () => {
             </div>
 
             {/* Mobile Responsive Infographic Bar (visible on small mobile screens below photo) */}
-            <div className="sm:hidden grid grid-cols-2 gap-2 mt-4 pt-1">
-              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/95 border border-[#dfc285]/60 shadow-sm animate-float-1">
-                <div className="w-7 h-7 rounded-lg bg-[#0f3d2e] flex items-center justify-center text-[#dfc285] shrink-0">
-                  <Award className="w-3.5 h-3.5 text-[#dfc285]" />
+            <div className="sm:hidden grid grid-cols-2 gap-2.5 mt-5">
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/95 backdrop-blur-sm border border-[#dfc285]/70 shadow-sm active:scale-95 transition-all">
+                <div className="w-8 h-8 rounded-lg bg-[#0f3d2e] flex items-center justify-center text-[#dfc285] shadow-xs shrink-0">
+                  <Award className="w-4 h-4 text-[#dfc285]" />
                 </div>
-                <span className="text-[11px] font-bold text-[#0f3d2e]">ইসলামিক স্কলার</span>
+                <div className="text-left min-w-0">
+                  <span className="block text-xs font-bold text-[#0f3d2e] font-heading truncate">ইসলামিক স্কলার</span>
+                  <span className="block text-[9px] text-[#718579] font-medium">ইফতা ও হাদিস</span>
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/95 border border-[#dfc285]/60 shadow-sm animate-float-2">
-                <div className="w-7 h-7 rounded-lg bg-[#144938] flex items-center justify-center text-[#dfc285] shrink-0">
-                  <GraduationCap className="w-3.5 h-3.5 text-[#dfc285]" />
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/95 backdrop-blur-sm border border-[#dfc285]/70 shadow-sm active:scale-95 transition-all">
+                <div className="w-8 h-8 rounded-lg bg-[#144938] flex items-center justify-center text-[#dfc285] shadow-xs shrink-0">
+                  <GraduationCap className="w-4 h-4 text-[#dfc285]" />
                 </div>
-                <span className="text-[11px] font-bold text-[#0f3d2e]">শিক্ষক</span>
+                <div className="text-left min-w-0">
+                  <span className="block text-xs font-bold text-[#0f3d2e] font-heading truncate">শিক্ষক</span>
+                  <span className="block text-[9px] text-[#718579] font-medium">দরস ও তাদরীস</span>
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/95 border border-[#dfc285]/60 shadow-sm animate-float-3">
-                <div className="w-7 h-7 rounded-lg bg-[#0f3d2e] flex items-center justify-center text-[#dfc285] shrink-0">
-                  <Compass className="w-3.5 h-3.5 text-[#dfc285]" />
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/95 backdrop-blur-sm border border-[#dfc285]/70 shadow-sm active:scale-95 transition-all">
+                <div className="w-8 h-8 rounded-lg bg-[#0f3d2e] flex items-center justify-center text-[#dfc285] shadow-xs shrink-0">
+                  <Compass className="w-4 h-4 text-[#dfc285]" />
                 </div>
-                <span className="text-[11px] font-bold text-[#0f3d2e]">মেন্টর</span>
+                <div className="text-left min-w-0">
+                  <span className="block text-xs font-bold text-[#0f3d2e] font-heading truncate">মেন্টর</span>
+                  <span className="block text-[9px] text-[#718579] font-medium">ক্যারিয়ার গাইড</span>
+                </div>
               </div>
 
-              <div className="flex items-center gap-2 p-2 rounded-xl bg-white/95 border border-[#dfc285]/60 shadow-sm animate-float-4">
-                <div className="w-7 h-7 rounded-lg bg-[#17523f] flex items-center justify-center text-[#dfc285] shrink-0">
-                  <Briefcase className="w-3.5 h-3.5 text-[#dfc285]" />
+              <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/95 backdrop-blur-sm border border-[#dfc285]/70 shadow-sm active:scale-95 transition-all">
+                <div className="w-8 h-8 rounded-lg bg-[#17523f] flex items-center justify-center text-[#dfc285] shadow-xs shrink-0">
+                  <Briefcase className="w-4 h-4 text-[#dfc285]" />
                 </div>
-                <span className="text-[11px] font-bold text-[#0f3d2e]">উদ্যোক্তা</span>
+                <div className="text-left min-w-0">
+                  <span className="block text-xs font-bold text-[#0f3d2e] font-heading truncate">উদ্যোক্তা</span>
+                  <span className="block text-[9px] text-[#718579] font-medium">খিদমাহ উদ্যোগ</span>
+                </div>
               </div>
             </div>
           </div>
